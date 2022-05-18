@@ -9,7 +9,7 @@ on:
       - '**.md'
 
 jobs:
-  build:
+  clippy:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/gtk-rs/gtk4-rs/gtk4:latest
@@ -21,4 +21,4 @@ jobs:
         with:
           toolchain: stable
       - run: meson setup build
-      - run: cargo clippy --check
+      - run: cargo clippy
