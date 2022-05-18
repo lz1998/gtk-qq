@@ -11,8 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/gtk-rs/gtk4-rs/gtk4:latest
+    # container:
+    #   image: ghcr.io/gtk-rs/gtk4-rs/gtk4:latest
     env:
       RUSTFLAGS: -D warnings
     steps:
@@ -23,3 +23,4 @@ jobs:
       - run: meson setup build
       - run: cargo check
       - run: cargo fmt --check
+      - run: cargo clippy --check
