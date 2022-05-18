@@ -40,15 +40,15 @@ impl SimpleComponent for LoginPageModel {
         use LoginPageMsg::*;
         match msg {
             LoginStart => {
-                println!("{:?}", self);
-                if self.account == "" {
-                    sender.input(PushToast("Account cannot be empty".to_string()));
-                    return;
-                }
-                if self.password == "" {
-                    sender.input(PushToast("Password cannot be empty".to_string()));
-                    return;
-                }
+                // println!("{:?}", self);
+                // if self.account == "" {
+                //     sender.input(PushToast("Account cannot be empty".to_string()));
+                //     return;
+                // }
+                // if self.password == "" {
+                //     sender.input(PushToast("Password cannot be empty".to_string()));
+                //     return;
+                // }
                 sender.input(LoginPageMsg::LoginSuccessful);
             }
             LoginSuccessful => sender.output(AppMessage::LoginSuccessful),
