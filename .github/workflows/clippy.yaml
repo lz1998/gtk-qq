@@ -1,4 +1,4 @@
-name: CI
+name: Clippy
 
 on:
   push:
@@ -21,6 +21,4 @@ jobs:
         with:
           toolchain: stable
       - run: meson setup build
-      - run: cargo check
-      - run: cargo fmt --check
       - run: cargo clippy --check
